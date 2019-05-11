@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage ("First step") {
       steps {
-      sh 'ls -ls /root/'
+      sh 'ssh root@mycentos 'ls -ls /root/''
       }
     }
   }
