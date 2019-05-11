@@ -1,0 +1,16 @@
+pipeline {
+  agent {
+  label 'master'
+  }
+  options {
+  buildDiscaster(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+  timestamps()
+  }
+  stages {
+    stage ("First step") {
+      steps {
+      sh 'ls -ls /root/'
+      }
+    }
+  }
+}
